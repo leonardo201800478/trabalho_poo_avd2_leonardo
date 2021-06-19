@@ -39,7 +39,7 @@ class DespesasServices {
     const despesasRepository = getCustomRepository(DespesasRepository)
 
     const despesas = await despesasRepository.find({
-      relations: ['responsaveis', 'despesas']
+      relations: ['responsaveis']
     })
 
     return despesas
@@ -49,7 +49,7 @@ class DespesasServices {
     const despesasRepository = getCustomRepository(DespesasRepository)
 
     const despesas = await despesasRepository.findOne(id, {
-      relations: ['responsaveis', 'despesas']
+      relations: ['responsaveis']
     })
 
     return despesas
@@ -76,7 +76,7 @@ class DespesasServices {
       throw new Error('ID da despesa não encontrada!!!')
     }
 
-    const despesasUpdate = await despesasRepository.update(id, {
+    const despesasUpdated = await despesasRepository.update(id, {
       responsaveis_id,
       local_compra,
       data_compra,
