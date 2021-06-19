@@ -14,7 +14,7 @@ class Despesas {
 
   @JoinColumn({ name: 'responsaveis_id' })
   @ManyToOne(() => Responsavel)
-  responsavel: Responsavel;
+  responsaveis: Responsavel;
 
   @Column()
   responsaveis_id: string;
